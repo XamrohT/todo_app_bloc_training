@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app_bloc/cubits/cubit/todo_filter_cubit.dart';
+import 'package:todo_app_bloc/feature/presenter/pages/cubit/todo_filter_cubit.dart';
+import 'package:todo_app_bloc/feature/presenter/widgets/widgets_homepage.dart';
 
 class TodosPage extends StatefulWidget {
   const TodosPage({super.key});
@@ -11,7 +12,7 @@ class TodosPage extends StatefulWidget {
 
 class _TodosPageState extends State<TodosPage> {
   late final TodoStateCubit cubit;
-  TextEditingController _todoAddControler = TextEditingController();
+  final TextEditingController _todoAddControler = TextEditingController();
 
   @override
   void initState(){
@@ -43,9 +44,9 @@ class _TodosPageState extends State<TodosPage> {
                 }else if(state is LoadingTodoState){
                   return const CircularProgressIndicator();
                 }else if(state is LoadedTodoState){
-                  return _buildTodoList(state.todos);
+                  return ListTileAuxWidget(todos:state.todos);
                 }else{
-                  return _buildTodoList(cubit.todos);
+                  return ListTileAuxWidget(todos:cubit.todos);
                 }
                            }),
              ),
@@ -53,16 +54,5 @@ class _TodosPageState extends State<TodosPage> {
         ),
       ),
     );
-  }
-
-  Widget _buildTodoList(List<String> todos){
-    return ListView.builder(itemCount: todos.length,itemBuilder: (_,index){
-        return ListTile(
-          title: Text(todos[index]),
-          trailing: IconButton(icon: const Icon(Icons.delete,color: Colors.red,),onPressed: (){
-            cubit.removeTodo(index: index);
-          },),
-        );
-    });
   }
 }

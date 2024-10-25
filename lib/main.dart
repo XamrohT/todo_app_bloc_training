@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app_bloc/cubits/cubit/todo_filter_cubit.dart';
-import 'package:todo_app_bloc/pages/home_page/todo_page.dart';
+import 'package:todo_app_bloc/feature/presenter/pages/cubit/todo_filter_cubit.dart';
+import 'package:todo_app_bloc/feature/presenter/pages/view/todo_page.dart';
 
 void main() {
   runApp(const MyApp());
