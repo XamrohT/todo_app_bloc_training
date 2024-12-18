@@ -11,7 +11,7 @@ class LoadingTodoState extends TodoState{
   
 }
 class LoadedTodoState extends TodoState{
-  final List<String> todos;
+  final List<TodoEntity> todos;
 
   LoadedTodoState(this.todos);
 }

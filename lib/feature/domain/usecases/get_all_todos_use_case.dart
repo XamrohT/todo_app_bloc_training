@@ -6,7 +6,7 @@ class GetAllTodosUseCase{
 
   GetAllTodosUseCase(this._repository);
 
-  Future<TodoEntity> execute () async {
+  Future<List<TodoEntity>> execute () async {
     return await _repository.getTodos();
   }
 }

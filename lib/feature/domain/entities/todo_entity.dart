@@ -3,24 +3,27 @@ import 'package:equatable/equatable.dart';
 
 class TodoEntity extends Equatable {
   final String id;
+  final String title;
   final String content;
 
   const TodoEntity({
     required this.id,
+    required this.title, 
     required this.content,
   });
 
   factory TodoEntity.fromJson(Map<String,dynamic> json){
     return TodoEntity(
       id: json['_id'] ?? '',
+      title: json['title'] ?? '',
       content: json ['content'] ?? '',
     );
   }
 
   Map<String,dynamic> toJson() => {
     '_id': id,
+    'title': title,
     'content' : content,
-
   };
 
   @override
