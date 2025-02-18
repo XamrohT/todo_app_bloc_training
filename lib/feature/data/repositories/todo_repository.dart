@@ -8,19 +8,16 @@ class TodoRepository implements ITodoRepository {
   TodoRepository(this._remoteDatasource);
   @override
   Future<void> createTodo(String id, String content) {
-    // TODO: implement createTodo
-    throw UnimplementedError();
+   return _remoteDatasource.createTodo(id, content);
   }
 
   @override
   Future<List<TodoEntity>> getTodos() {
-    // TODO: implement getTodos
-    throw UnimplementedError();
+    return _remoteDatasource.getTodos();
   }
 
   @override
   Future<void> removeTodo(String id) {
-    // TODO: implement removeTodo
-    throw UnimplementedError();
+    return _remoteDatasource.removeTodo(id);
   }
 }
