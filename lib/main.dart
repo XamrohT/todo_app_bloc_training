@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:todo_app_bloc/core/dependencies/dependencie_injector.dart';
 import 'package:todo_app_bloc/feature/presenter/pages/view/todo_page.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await setupDependencies();
   runApp(const MyApp());
 }
 
