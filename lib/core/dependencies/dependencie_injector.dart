@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:todo_app_bloc/core/database/database_helper.dart';
 import 'package:todo_app_bloc/feature/data/data_source/todo_remote_datasource.dart';
 import 'package:todo_app_bloc/feature/data/repositories/todo_repository.dart';
 import 'package:todo_app_bloc/feature/domain/repositories/i_todo_repository.dart';
@@ -16,7 +17,10 @@ setupDependencies() async {
 getItRegister() {
   //datasources
   getIt.registerLazySingleton<TodoRemoteRemoteDatasource>(
-      () => TodoRemoteRemoteDatasource());
+    () => TodoRemoteDatasourceImplementation(
+      DatabaseHelper(),
+    ),
+  );
 
   //repositories
   getIt.registerLazySingleton<ITodoRepository>(

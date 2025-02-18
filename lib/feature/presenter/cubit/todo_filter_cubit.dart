@@ -2,6 +2,7 @@
 import 'dart:core';
 
 import 'package:bloc/bloc.dart';
+import 'package:todo_app_bloc/core/result/result.dart';
 import 'package:todo_app_bloc/feature/domain/entities/todo_entity.dart';
 import 'package:todo_app_bloc/feature/domain/usecases/create_new_todo_use_case.dart';
 import 'package:todo_app_bloc/feature/domain/usecases/get_all_todos_use_case.dart';
@@ -20,12 +21,8 @@ class TodoCubit extends Cubit<TodoState> {
   final RemoveTodoUseCase removeTodoUseCase;
 
 
-  Future<void> createNewTodo(String id, String content) async {
-    try{
-      await  createNewTodoUseCase.execute(id, content); 
-    }on Exception catch (e){
-      throw e;
-    }
+  Future<Result<void>> createNewTodo(String title, String content) async {
+      return await createNewTodoUseCase.execute(title, content); 
   }
 
   Future<void> getAllTodos() async {

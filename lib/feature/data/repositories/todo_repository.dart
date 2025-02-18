@@ -1,3 +1,4 @@
+import 'package:todo_app_bloc/core/result/result.dart';
 import 'package:todo_app_bloc/feature/data/data_source/todo_remote_datasource.dart';
 import 'package:todo_app_bloc/feature/domain/entities/todo_entity.dart';
 import 'package:todo_app_bloc/feature/domain/repositories/i_todo_repository.dart';
@@ -7,8 +8,8 @@ class TodoRepository implements ITodoRepository {
 
   TodoRepository(this._remoteDatasource);
   @override
-  Future<void> createTodo(String id, String content) {
-   return _remoteDatasource.createTodo(id, content);
+  Future<Result<void>> createTodo(String content, String title) async {
+   return await _remoteDatasource.createTodo(title, content);
   }
 
   @override

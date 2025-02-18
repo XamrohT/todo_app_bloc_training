@@ -33,6 +33,7 @@ class _TodosPageState extends State<TodosPage> {
           return Scaffold(
             body: Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextField(
                     controller: _todoAddControler,

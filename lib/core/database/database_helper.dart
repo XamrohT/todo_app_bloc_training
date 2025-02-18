@@ -10,7 +10,7 @@ class DatabaseHelper {
     const String tableTodo = 'todo';
     const String columnId = '_id';
     const String columnTitle = 'title';
-    const String columnContent = 'done';
+    const String columnContent = 'content';
     return openDatabase(
       join(await getDatabasesPath(), _databaseName),
       onCreate: (db, version) {
