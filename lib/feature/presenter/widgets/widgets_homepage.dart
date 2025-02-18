@@ -16,12 +16,12 @@ class ListTileAuxWidget extends StatefulWidget {
 }
 
 class _ListTileAuxWidgetState extends State<ListTileAuxWidget> {
-  late final TodoStateCubit cubit;
+  late final TodoCubit cubit;
 
   @override
   void initState() {
     super.initState();
-    cubit = BlocProvider.of<TodoStateCubit>(context);
+    cubit = BlocProvider.of<TodoCubit>(context);
   }
 
   @override

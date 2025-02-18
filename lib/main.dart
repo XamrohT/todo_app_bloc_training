@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:todo_app_bloc/core/dependencies/dependencie_injector.dart';
 import 'package:todo_app_bloc/feature/presenter/pages/view/todo_page.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await setupDependencies();
@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const TodosPage();
+    return const MaterialApp(
+      home: TodosPage(),
+    );
   }
 }

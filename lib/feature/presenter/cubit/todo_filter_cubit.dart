@@ -10,10 +10,10 @@ import 'package:todo_app_bloc/feature/domain/usecases/remove_todo_use_case.dart'
 
 part 'todo_filter_state.dart';
 
-class TodoStateCubit extends Cubit<TodoState> {
+class TodoCubit extends Cubit<TodoState> {
   final List<TodoEntity> _todos = [];
   List<TodoEntity> get todos => _todos;
-  TodoStateCubit({required this.createNewTodoUseCase, required this.getAllTodosUseCase,required this.removeTodoUseCase}) : super(InitialTodoState());
+  TodoCubit({required this.createNewTodoUseCase, required this.getAllTodosUseCase,required this.removeTodoUseCase}) : super(InitialTodoState());
 
   final CreateNewTodoUseCase createNewTodoUseCase;
   final GetAllTodosUseCase getAllTodosUseCase;
