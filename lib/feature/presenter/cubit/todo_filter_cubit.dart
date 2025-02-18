@@ -29,13 +29,7 @@ class TodoCubit extends Cubit<TodoState> {
     return await getAllTodosUseCase.execute();
   }
 
-  Future<void> removeTodo(String id) async {
-    try{
-      await removeTodoUseCase.execute(id);
-      _todos.removeWhere((element) => element.id == id);
-      emit(LoadedTodoState(_todos));
-    }on Exception catch (e){
-      throw e;
-    }
+  Future<Result<void>> removeTodo(String id) async {
+    return await removeTodoUseCase.execute(id);
   }
 }

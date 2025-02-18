@@ -18,7 +18,7 @@ class TodoRepository implements ITodoRepository {
   }
 
   @override
-  Future<void> removeTodo(String id) {
+  Future<Result<void>> removeTodo(String id) {
     return _remoteDatasource.removeTodo(id);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:todo_app_bloc/core/result/result.dart';
 import 'package:todo_app_bloc/feature/domain/repositories/i_todo_repository.dart';
 
 class RemoveTodoUseCase{
@@ -5,7 +6,7 @@ class RemoveTodoUseCase{
 
   RemoveTodoUseCase(this._repository);
 
-  Future<void> execute (String id) async {
+  Future<Result<void>> execute (String id) async {
     return await _repository.removeTodo(id);
   }
 }
