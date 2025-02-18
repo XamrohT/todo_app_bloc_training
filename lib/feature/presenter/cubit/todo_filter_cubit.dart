@@ -25,14 +25,8 @@ class TodoCubit extends Cubit<TodoState> {
       return await createNewTodoUseCase.execute(title, content); 
   }
 
-  Future<void> getAllTodos() async {
-    try{
-      final todos = await getAllTodosUseCase.execute();
-      _todos.addAll(todos);
-      emit(LoadedTodoState(_todos));
-    }on Exception catch (e){
-      throw e;
-    }
+  Future<Result<List<TodoEntity>>> getAllTodos() async {
+    return await getAllTodosUseCase.execute();
   }
 
   Future<void> removeTodo(String id) async {

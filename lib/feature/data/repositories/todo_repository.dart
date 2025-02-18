@@ -13,8 +13,8 @@ class TodoRepository implements ITodoRepository {
   }
 
   @override
-  Future<List<TodoEntity>> getTodos() {
-    return _remoteDatasource.getTodos();
+  Future<Result<List<TodoEntity>>> getTodos() async {
+    return await _remoteDatasource.getTodos();
   }
 
   @override

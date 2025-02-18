@@ -7,7 +7,7 @@ import '../../domain/entities/todo_entity.dart';
 
 abstract class TodoRemoteRemoteDatasource {
   Future<Result<void>> createTodo(String title, String content);
-  Future<List<TodoEntity>> getTodos();
+  Future<Result<List<TodoEntity>> >getTodos();
   Future<void> removeTodo(String id);
 }
 
@@ -31,9 +31,13 @@ class TodoRemoteDatasourceImplementation implements TodoRemoteRemoteDatasource {
   }
   
   @override
-  Future<List<TodoEntity>> getTodos() {
-    // TODO: implement getTodos
-    throw UnimplementedError();
+  Future<Result<List<TodoEntity>>> getTodos() async {
+    try{
+      final todos = await _databaseHelper.getAll();
+      return Result.success(todos);
+    }catch(e){
+      return Result.failure("erro:$e");
+    }
   }
   
   @override

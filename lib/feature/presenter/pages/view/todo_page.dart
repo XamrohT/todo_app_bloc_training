@@ -48,6 +48,15 @@ class _TodosPageState extends State<TodosPage> {
                         },
                         child: const Icon(Icons.add)),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                        onPressed: () {
+                          cubit.getAllTodos();
+                          _todoAddControler.clear();
+                        },
+                        child: const Icon(Icons.add)),
+                  ),
                   SizedBox(
                     height: 500,
                     child: BlocBuilder(
