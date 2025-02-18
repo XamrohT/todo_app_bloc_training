@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app_bloc/shared/styles/icons_styles.dart';
+import 'package:todo_app_bloc/shared/styles/styles.dart';
 
 class BottomNavigatorBar extends StatefulWidget {
   const BottomNavigatorBar({super.key});
@@ -22,7 +22,7 @@ class _BottomNavigatorBarState extends State<BottomNavigatorBar> {
     return BottomNavigationBar(
       elevation: 10,
       currentIndex: _selectedIndex,
-      unselectedItemColor: IconsColors.inactiveColor,
+      unselectedItemColor: AppColors.inactiveColor,
       selectedItemColor: Colors.blueAccent,
       onTap: _onItemTapped,
       items: const <BottomNavigationBarItem>[
