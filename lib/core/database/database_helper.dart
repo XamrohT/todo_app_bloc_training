@@ -1,6 +1,6 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:todo_app_bloc/feature/data/models/todo_model.dart';
+import 'package:todo_app_bloc/feature/todos/data/models/todo_model.dart';
 
 class DatabaseHelper {
   static const int _version = 1;

@@ -1,6 +1,6 @@
 import 'package:todo_app_bloc/core/database/database_helper.dart';
 import 'package:todo_app_bloc/core/result/result.dart';
-import 'package:todo_app_bloc/feature/data/models/todo_model.dart';
+import 'package:todo_app_bloc/feature/todos/data/models/todo_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../domain/entities/todo_entity.dart';

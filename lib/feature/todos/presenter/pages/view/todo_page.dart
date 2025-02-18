@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:todo_app_bloc/feature/presenter/cubit/todo_filter_cubit.dart';
+import 'package:todo_app_bloc/feature/todos/presenter/cubit/todo_filter_cubit.dart';
 
 class TodosPage extends StatefulWidget {
   const TodosPage({super.key});

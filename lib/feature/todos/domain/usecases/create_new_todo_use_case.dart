@@ -1,5 +1,5 @@
 import 'package:todo_app_bloc/core/result/result.dart';
-import 'package:todo_app_bloc/feature/domain/repositories/i_todo_repository.dart';
+import 'package:todo_app_bloc/feature/todos/domain/repositories/i_todo_repository.dart';
 
 class CreateNewTodoUseCase{
   final ITodoRepository _repository;

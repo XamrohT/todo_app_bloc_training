@@ -3,10 +3,10 @@ import 'dart:core';
 
 import 'package:bloc/bloc.dart';
 import 'package:todo_app_bloc/core/result/result.dart';
-import 'package:todo_app_bloc/feature/domain/entities/todo_entity.dart';
-import 'package:todo_app_bloc/feature/domain/usecases/create_new_todo_use_case.dart';
-import 'package:todo_app_bloc/feature/domain/usecases/get_all_todos_use_case.dart';
-import 'package:todo_app_bloc/feature/domain/usecases/remove_todo_use_case.dart';
+import 'package:todo_app_bloc/feature/todos/domain/entities/todo_entity.dart';
+import 'package:todo_app_bloc/feature/todos/domain/usecases/create_new_todo_use_case.dart';
+import 'package:todo_app_bloc/feature/todos/domain/usecases/get_all_todos_use_case.dart';
+import 'package:todo_app_bloc/feature/todos/domain/usecases/remove_todo_use_case.dart';
 
 
 part 'todo_filter_state.dart';
