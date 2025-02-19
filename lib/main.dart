@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todo_app_bloc/core/dependencies/dependencie_injector.dart';
 import 'package:todo_app_bloc/feature/todos/presenter/view/pages/todo_page.dart';
+import 'package:todo_app_bloc/routes/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: onGenerateRoute,
       home: TodosPage(),
     );
   }
