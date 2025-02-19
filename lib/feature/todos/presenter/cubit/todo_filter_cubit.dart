@@ -12,7 +12,6 @@ import 'package:todo_app_bloc/feature/todos/domain/usecases/remove_todo_use_case
 part 'todo_filter_state.dart';
 
 class TodoCubit extends Cubit<TodoState> {
-  final List<TodoEntity> _todos = [];
   List<TodoEntity> get todos => _todos;
   TodoCubit({required this.createNewTodoUseCase, required this.getAllTodosUseCase,required this.removeTodoUseCase}) : super(InitialTodoState());
 
@@ -20,13 +19,21 @@ class TodoCubit extends Cubit<TodoState> {
   final GetAllTodosUseCase getAllTodosUseCase;
   final RemoveTodoUseCase removeTodoUseCase;
 
+  late final List<TodoEntity> _todos= [];
 
   Future<Result<void>> createNewTodo(String title, String content) async {
       return await createNewTodoUseCase.execute(title, content); 
   }
 
-  Future<Result<List<TodoEntity>>> getAllTodos() async {
-    return await getAllTodosUseCase.execute();
+  Future<void> getAllTodos() async {
+    emit(LoadingTodoState());
+    final data = await getAllTodosUseCase.execute();
+    _todos.clear();
+    if(data.isFailure){
+       emit(ErrorTodoState(data.error!));
+    }
+    _todos.addAll(data.data!);   
+    emit(LoadedTodoState());
   }
 
   Future<Result<void>> removeTodo(String id) async {
